@@ -1,0 +1,11 @@
+.cache/
+.vscode/
+.idea/
+.zed/
+*.idx
+
+build/
+sdkconfig.old
+
+.clangd/
+*.log
