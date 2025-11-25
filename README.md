@@ -136,7 +136,7 @@ atmosedge-proto: HTTP server started, GET /metrics for data
 
 ---
 
-## 💡 Troubleshooting
+## Troubleshooting
 
 | Issue                      | Solution                                    |
 | -------------------------- | ------------------------------------------- |
