@@ -1,0 +1,6 @@
+source "/home/awr417h/bin/esp/esp-idf-v5.4.3/components/bootloader/Kconfig.projbuild"
+source "/home/awr417h/bin/esp/esp-idf-v5.4.3/components/esp_app_format/Kconfig.projbuild"
+source "/home/awr417h/bin/esp/esp-idf-v5.4.3/components/esp_rom/Kconfig.projbuild"
+source "/home/awr417h/bin/esp/esp-idf-v5.4.3/components/esptool_py/Kconfig.projbuild"
+source "/home/awr417h/bin/esp/esp-idf-v5.4.3/components/partition_table/Kconfig.projbuild"
+source "/home/awr417h/Projects/esp/my_project/main/Kconfig.projbuild"

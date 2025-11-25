@@ -1,0 +1,2 @@
+source /home/awr417h/Projects/esp/my_project/build/bootloader/gdbinit/symbols
+source /home/awr417h/Projects/esp/my_project/build/bootloader/gdbinit/connect

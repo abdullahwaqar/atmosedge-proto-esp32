@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/awr417h/Projects/esp/my_project/build/CMakeFiles/bootloader
+/home/awr417h/Projects/esp/my_project/build/CMakeFiles/bootloader.rule
+/home/awr417h/Projects/esp/my_project/build/CMakeFiles/bootloader-complete.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/awr417h/Projects/esp/my_project/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

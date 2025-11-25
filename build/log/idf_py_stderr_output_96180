@@ -1,0 +1,23 @@
+In file included from /home/awr417h/Projects/esp/my_project/main/main.c:2:
+/home/awr417h/bin/esp/esp-idf-v5.4.3/components/driver/deprecated/driver/adc.h:19:2: warning: #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively" [-Wcpp]
+   19 | #warning "legacy adc driver is deprecated, please migrate to use esp_adc/adc_oneshot.h and esp_adc/adc_continuous.h for oneshot mode and continuous mode drivers respectively"
+      |  ^~~~~~~
+In file included from /home/awr417h/Projects/esp/my_project/main/main.c:4:
+/home/awr417h/bin/esp/esp-idf-v5.4.3/components/esp_adc/deprecated/include/esp_adc_cal.h:17:2: warning: #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h" [-Wcpp]
+   17 | #warning "legacy adc calibration driver is deprecated, please migrate to use esp_adc/adc_cali.h and esp_adc/adc_cali_scheme.h"
+      |  ^~~~~~~
+/home/awr417h/Projects/esp/my_project/main/main.c: In function 'sensors_init':
+/home/awr417h/Projects/esp/my_project/main/main.c:96:3: warning: 'ADC_ATTEN_DB_11' is deprecated [-Wdeprecated-declarations]
+   96 |   adc1_config_channel_atten(SENSOR1_ADC_CH, ADC_ATTEN_DB_11);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/awr417h/bin/esp/esp-idf-v5.4.3/components/driver/deprecated/driver/adc_types_legacy.h:8,
+                 from /home/awr417h/bin/esp/esp-idf-v5.4.3/components/driver/deprecated/driver/adc.h:15:
+/home/awr417h/bin/esp/esp-idf-v5.4.3/components/hal/include/hal/adc_types.h:51:5: note: declared here
+   51 |     ADC_ATTEN_DB_11 __attribute__((deprecated)) = ADC_ATTEN_DB_12,  ///<This is deprecated, it behaves the same as `ADC_ATTEN_DB_12`
+      |     ^~~~~~~~~~~~~~~
+/home/awr417h/Projects/esp/my_project/main/main.c:97:3: warning: 'ADC_ATTEN_DB_11' is deprecated [-Wdeprecated-declarations]
+   97 |   esp_adc_cal_characterize(ADC_UNIT_1, ADC_ATTEN_DB_11, ADC_WIDTH_BIT_12, 1100,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/awr417h/bin/esp/esp-idf-v5.4.3/components/hal/include/hal/adc_types.h:51:5: note: declared here
+   51 |     ADC_ATTEN_DB_11 __attribute__((deprecated)) = ADC_ATTEN_DB_12,  ///<This is deprecated, it behaves the same as `ADC_ATTEN_DB_12`
+      |     ^~~~~~~~~~~~~~~
