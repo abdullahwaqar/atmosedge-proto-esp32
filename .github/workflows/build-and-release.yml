@@ -1,0 +1,73 @@
+name: Build & Release atmosedge-proto (esp32)
+
+on:
+    push:
+        tags:
+            - "v*"
+        branches:
+            - master
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.10"
+
+            - name: Install ESP-IDF
+              run: |
+                  git clone --recursive https://github.com/espressif/esp-idf.git
+                  cd esp-idf
+                  git checkout v5.4
+                  ./install.sh esp32
+                  echo "source $PWD/export.sh" >> $GITHUB_ENV
+
+            - name: Cache IDF
+              uses: actions/cache@v4
+              with:
+                  path: ~/.espressif
+                  key: ${{ runner.os }}-esp-idf-tools
+                  restore-keys: |
+                      ${{ runner.os }}-esp-idf-tools
+
+            - name: Build Firmware
+              run: |
+                  . $GITHUB_ENV
+                  idf.py set-target esp32
+                  idf.py build
+              working-directory: .
+
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                  name: atmosedge-proto-firmware
+                  path: build/*.bin
+
+    release:
+        needs: build
+        runs-on: ubuntu-latest
+        if: startsWith(github.ref, 'refs/tags/v')
+        steps:
+            - name: Download firmware
+              uses: actions/download-artifact@v4
+              with:
+                  name: atmosedge-proto-firmware
+
+            - name: Create GitHub Release
+              uses: softprops/action-gh-release@v2
+              with:
+                  files: "*.bin"
+                  tag_name: ${{ github.ref_name }}
+                  name: "atmosedge-proto Release ${{ github.ref_name }}"
+                  draft: false
+                  prerelease: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
