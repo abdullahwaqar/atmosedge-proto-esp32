@@ -28,22 +28,21 @@ jobs:
                   cd esp-idf
                   git checkout v5.4
                   ./install.sh esp32
-                  echo "source $PWD/export.sh" >> $GITHUB_ENV
+                  echo "ESP_IDF_PATH=$PWD" >> $GITHUB_ENV
 
             - name: Cache IDF
               uses: actions/cache@v4
               with:
                   path: ~/.espressif
                   key: ${{ runner.os }}-esp-idf-tools
-                  restore-keys: |
-                      ${{ runner.os }}-esp-idf-tools
+                  restore-keys: ${{ runner.os }}-esp-idf-tools
 
             - name: Build Firmware
+              shell: bash
               run: |
-                  . $GITHUB_ENV
+                  source $ESP_IDF_PATH/export.sh
                   idf.py set-target esp32
                   idf.py build
-              working-directory: .
 
             - name: Upload Build Artifacts
               uses: actions/upload-artifact@v4
